@@ -1,3 +1,4 @@
+import Kategori from '@/components/kategori';
 import { Image, StyleSheet, Platform, View, Text, SafeAreaView } from 'react-native';
 
 
@@ -10,15 +11,9 @@ export default function HomeScreen() {
    </View>
    <View>
    <View style={styles.container}>
-      <View style={styles.categoryItem}>
-        <Text style={styles.categoryText}>Game</Text>
-      </View>
-      <View style={styles.categoryItem}>
-        <Text style={styles.categoryText}>Aplikasi</Text>
-      </View>
-      <View style={styles.categoryItem}>
-        <Text style={styles.categoryText}>Pulsa&token</Text>
-      </View>
+      <Kategori kategori_name="Pulsa & Token" />
+      <Kategori kategori_name="Pulsa & Token" />
+      <Kategori kategori_name="Pulsa & Token" />
     </View>
    </View>
      </SafeAreaView>
