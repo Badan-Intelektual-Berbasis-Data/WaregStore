@@ -1,4 +1,4 @@
-import Kategori from '@/components/kategori';
+import Kategori from '@/components/Kategori';
 import { Image, StyleSheet, Platform, View, Text, SafeAreaView } from 'react-native';
 
 
@@ -15,6 +15,9 @@ export default function HomeScreen() {
       <Kategori kategori_name="Pulsa & Token" />
       <Kategori kategori_name="Pulsa & Token" />
     </View>
+
+    {/* content */}
+
    </View>
      </SafeAreaView>
   );
