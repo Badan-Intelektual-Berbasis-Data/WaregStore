@@ -1,5 +1,5 @@
 import Kategori from '@/components/Kategori';
-import { Image, StyleSheet, Platform, View, Text, SafeAreaView } from 'react-native';
+import { Image, StyleSheet, ScrollView, View, Text, SafeAreaView } from 'react-native';
 
 
 export default function HomeScreen() {
@@ -10,11 +10,12 @@ export default function HomeScreen() {
    <Text style={styles.textheader}>waregStore</Text>
    </View>
    <View>
-   <View style={styles.container}>
+   <ScrollView horizontal={true} contentContainerStyle={styles.container}>
       <Kategori kategori_name="Pulsa & Token" />
       <Kategori kategori_name="Pulsa & Token" />
       <Kategori kategori_name="Pulsa & Token" />
-    </View>
+      <Kategori kategori_name="Pulsa & Token" />
+    </ScrollView>
 
     {/* content */}
 
