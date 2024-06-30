@@ -4,16 +4,24 @@ import React from 'react'
 export default function Card() {
   return (
     <View>
-        <Image style={styles.image} source={{uri:'https://i.pinimg.com/736x/bc/20/94/bc20948f3bccfd926b41688b38b3d9c9.jpg'}} alt='foto'/>
+        <Image style={styles.image} source={{uri:'https://cdn.oneesports.id/cdn-data/sites/2/2024/01/honor.jpeg'}} alt='foto'/>
         {/* <Image style={styles.image} source={require("@/assets/images/react-logo.png")} alt='foto'/> */}
-       <Text>jjdsjdvjsv</Text>
+      <Text style={styles.text}>Honor Of King</Text>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
     image: {
-        width: 100,
-        height: 100
-    }
+        width: 500,
+        height: 200,
+        borderRadius:20,
+        marginRight:30,
+        marginTop:20
+    },
+    text: {
+      color:'black',
+      marginTop:30,
+      fontSize:26,
+    },
 })

@@ -5,15 +5,8 @@ import Card from './Card'
 export default function CardGroup({name}) {
   return (
     <View>
-      <Text>{name}</Text>
-      <ScrollView horizontal={true} >
-    <Card/>
-    <Card/>
-    <Card/>
-    <Card/>
-    <Card/>
-    <Card/>
-    <Card/>
+      <Text style={styles.title}>{name}</Text>
+      <ScrollView horizontal={true} contentContainerStyle={styles.container}>
     <Card/>
     <Card/>
     <Card/>
@@ -23,4 +16,15 @@ export default function CardGroup({name}) {
   )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    container:{
+        gap:20
+    },
+    title: {
+      fontSize:30,
+      margin:10,
+      fontWeight:'500',
+      paddingTop:30,
+      paddingLeft:20
+    }
+})
