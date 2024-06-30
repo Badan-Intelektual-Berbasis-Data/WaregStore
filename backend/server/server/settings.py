@@ -14,9 +14,10 @@ from pathlib import Path
 from dotenv import load_dotenv
 from os import getenv
 
+load_dotenv()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -45,7 +46,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
-    'rest_framework'
+    'rest_framework',
+    'users',
+    'products'
 ]
 
 MIDDLEWARE = [
@@ -90,7 +93,7 @@ DATABASES = {
         'USER': str(getenv('DATABASE_USERNAME')),
         'PASSWORD': str(getenv('DATABASE_PASSWORD')),
         'HOST': str(getenv('DATABASE_HOST')),
-        'PORT': str(getenv('PORT')),
+        'PORT': str(getenv('DATABASE_PORT')),
     }
 }
 
