@@ -6,3 +6,4 @@ lib
 *.sqlite
 *.db
 **/__pycache__
+.env
