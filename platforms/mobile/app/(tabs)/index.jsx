@@ -4,7 +4,7 @@ import Kategori from '@/components/Kategori';
 import { Image, StyleSheet, ScrollView, View, Text, SafeAreaView } from 'react-native';
 
 
-export default function HomeScreen() {
+export default function HomeScreen({navigation}) {
   return (
     
    <SafeAreaView> 
@@ -20,8 +20,8 @@ export default function HomeScreen() {
     </ScrollView>
 
     {/* content */}
-    <CardGroup name="Top up apa hari ini"/>
-    <CardGroup name="Disarankan"/>
+    <CardGroup name="Top up apa hari ini" navigation={navigation}/>
+    <CardGroup name="Disarankan" navigation={navigation}/>
    </View>
      </SafeAreaView>
   );

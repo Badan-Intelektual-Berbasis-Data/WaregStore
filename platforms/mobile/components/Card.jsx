@@ -1,13 +1,16 @@
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, Text, View, Pressable } from 'react-native'
 import React from 'react'
+import { Link } from "expo-router";
 
-export default function Card() {
+export default function Card(navigation) {
   return (
-    <View>
+    <Link href="/Details" asChild>
+    <Pressable>
         <Image style={styles.image} source={{uri:'https://cdn.oneesports.id/cdn-data/sites/2/2024/01/honor.jpeg'}} alt='foto'/>
         {/* <Image style={styles.image} source={require("@/assets/images/react-logo.png")} alt='foto'/> */}
       <Text style={styles.text}>Honor Of King</Text>
-    </View>
+    </Pressable>
+    </Link>
   )
 }
 
