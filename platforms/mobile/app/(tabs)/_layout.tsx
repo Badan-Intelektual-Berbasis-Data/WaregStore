@@ -1,16 +1,12 @@
 import { Tabs } from 'expo-router';
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
-import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { Ionicons } from '@expo/vector-icons';
 
 // Komponen SplashScreen
 const SplashScreen = () => (
   <View style={styles.splashContainer}>
-    {/* <Image
-      source={require('@/assets/images/logo.png')}
-      style={styles.image}
-    /> */}
     <Text style={styles.text}>WAREGSTORE</Text>
   </View>
 );
@@ -34,7 +30,15 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        tabBarActiveTintColor: '#f7287b',
+        tabBarInactiveTintColor: '#888',
+        tabBarStyle: {
+          backgroundColor: '#fff',
+        },
+        tabBarLabelStyle: {
+          fontSize: 12,
+          fontWeight: 'bold',
+        },
         headerShown: false,
       }}
     >
@@ -42,6 +46,7 @@ export default function TabLayout() {
         name="index"
         options={{
           title: 'Home',
+          tabBarIcon: ({ color, size }) => <Ionicons name="home" color={color} size={size} />,
         }}
       />
     </Tabs>

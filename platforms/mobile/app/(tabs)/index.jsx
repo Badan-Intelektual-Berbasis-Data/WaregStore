@@ -1,15 +1,17 @@
+import React from 'react';
+import { Image, StyleSheet, ScrollView, View, Text, SafeAreaView } from 'react-native';
 import Card from '@/components/Card';
 import CardGroup from '@/components/CardGroup';
 import Cardsource from '@/components/Cardsource';
 import Kategori from '@/components/Kategori';
-import { Image, StyleSheet, ScrollView, View, Text, SafeAreaView } from 'react-native';
 
 export default function HomeScreen({ navigation }) {
   return (
     <SafeAreaView>
       <ScrollView>
         <View style={styles.header}>
-          <Text style={styles.textheader}>waregStore</Text>
+          <Image source={require('@/assets/images/react-logo.png')} style={styles.logo} />
+          <Text style={styles.textheader}>Waregstore</Text>
         </View>
         <View>
           <ScrollView horizontal={true} contentContainerStyle={styles.container}>
@@ -20,41 +22,69 @@ export default function HomeScreen({ navigation }) {
           </ScrollView>
 
           {/* content */}
-          <CardGroup name="Top up apa hari ini" navigation={navigation} />
-          <CardGroup name="Disarankan" navigation={navigation} />
+          <View style={styles.cardGroupContainer}>
+            <CardGroup name="Top up apa hari ini" navigation={navigation} />
+            <CardGroup name="Lagi Diskon Nih" navigation={navigation} />
+          </View>
 
-          <View>
+          <View style={styles.contentContainer}>
             <Text style={styles.text1}>Lainnya</Text>
-            <View style={styles.cardContainer}>
-              <Cardsource navigation={navigation} />
-              <Cardsource navigation={navigation} />
-              <Cardsource navigation={navigation} />
-              <Cardsource navigation={navigation} />
-              <Cardsource navigation={navigation} />
-              <Cardsource navigation={navigation} />
-              <Cardsource navigation={navigation} />
-              <Cardsource navigation={navigation} />
-              <Cardsource navigation={navigation} />
-            </View>
+            <ScrollView horizontal={true} contentContainerStyle={styles.cardContainer}>
+              <View style={styles.cardWrapper}>
+                <Cardsource navigation={navigation} />
+              </View>
+              <View style={styles.cardWrapper}>
+                <Cardsource navigation={navigation} />
+              </View>
+              <View style={styles.cardWrapper}>
+                <Cardsource navigation={navigation} />
+              </View>
+              <View style={styles.cardWrapper}>
+                <Cardsource navigation={navigation} />
+              </View>
+              <View style={styles.cardWrapper}>
+                <Cardsource navigation={navigation} />
+              </View>
+              <View style={styles.cardWrapper}>
+                <Cardsource navigation={navigation} />
+              </View>
+              <View style={styles.cardWrapper}>
+                <Cardsource navigation={navigation} />
+              </View>
+              <View style={styles.cardWrapper}>
+                <Cardsource navigation={navigation} />
+              </View>
+              <View style={styles.cardWrapper}>
+                <Cardsource navigation={navigation} />
+              </View>
+            </ScrollView>
           </View>
         </View>
       </ScrollView>
     </SafeAreaView>
   );
 }
-//coba
+
 const styles = StyleSheet.create({
   header: {
     width: '100%',
     height: 80,
     backgroundColor: '#f7287b',
-    justifyContent: 'center',
+    flexDirection: 'row',
     alignItems: 'center',
-    paddingTop: 36,
+    paddingHorizontal: 20,
+  },
+  logo: {
+    width: 30,
+    height: 30,
+    marginRight: 10,
+    marginTop: 10,
   },
   textheader: {
+    marginTop: 10,
     fontSize: 24,
     fontWeight: 'bold',
+    color: '#fff',
   },
   container: {
     flexDirection: 'row',
@@ -76,19 +106,28 @@ const styles = StyleSheet.create({
   categoryText: {
     fontSize: 18,
   },
+  contentContainer: {
+    paddingLeft: 15,
+    paddingRight: 10,
+  },
+  cardGroupContainer: {
+    paddingHorizontal: 15,
+    paddingTop: 10,
+    marginBottom: 20,
+  },
   cardContainer: {
     flexDirection: 'row',
-    flexWrap: 'wrap',
-    columnGap: 50,
-    paddingHorizontal: 30,
-    rowGap: 50,
+    alignItems: 'center',
+    paddingLeft: 10,
+  },
+  cardWrapper: {
+    marginRight: 10,
   },
   text1: {
-    fontSize: 50,
-    margin: 10,
+    fontSize: 30,
     fontWeight: '500',
-    paddingTop: 20,
-    paddingLeft: 20,
-    marginBottom: 50,
+    marginVertical: 10,
+    marginLeft: 15,
+    marginBottom: 20,
   },
 });
