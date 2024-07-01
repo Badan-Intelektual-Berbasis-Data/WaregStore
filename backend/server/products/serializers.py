@@ -1,4 +1,7 @@
-from rest_framework.serializers import ModelSerializer
+from rest_framework.serializers import (
+    ModelSerializer,
+    PrimaryKeyRelatedField
+)
 from .models import (
     Product,
     Category,
@@ -8,6 +11,7 @@ from .models import (
 
 
 class ProductSerializer(ModelSerializer):
+    category = PrimaryKeyRelatedField(queryset=Category.objects.all())
     class Meta:
         model = Product
         depth = 1
@@ -22,6 +26,7 @@ class CategorySerializer(ModelSerializer):
 
 
 class GoodsSerializer(ModelSerializer):
+    product = PrimaryKeyRelatedField(queryset=Product.objects.all())
     class Meta:
         model = Goods
         depth = 1
