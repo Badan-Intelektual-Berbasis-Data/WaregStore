@@ -1,17 +1,15 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Sidebar from './components/Sidebar'
 
 function App() {
-  const [active, setActive] = useState(false)
+  const [active, setActive] = useState(true)
 
   return (
     <div className='flex'>
     <Sidebar opened={active} />
     <div>
-      <button onClick={() => setActive(state => !state)}>
+      <button className='bg-red-500' onClick={() => setActive(state => !state)}>
         Open
       </button>
     </div>
