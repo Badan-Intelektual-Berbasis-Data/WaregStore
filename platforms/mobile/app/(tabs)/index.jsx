@@ -1,5 +1,6 @@
 import Card from '@/components/Card';
 import CardGroup from '@/components/CardGroup';
+import Cardsource from '@/components/Cardsource';
 import Kategori from '@/components/Kategori';
 import { Image, StyleSheet, ScrollView, View, Text, SafeAreaView } from 'react-native';
 
@@ -8,6 +9,7 @@ export default function HomeScreen({navigation}) {
   return (
     
    <SafeAreaView> 
+    <ScrollView>
     <View style={styles.header}>
    <Text style={styles.textheader}>waregStore</Text>
    </View>
@@ -22,7 +24,23 @@ export default function HomeScreen({navigation}) {
     {/* content */}
     <CardGroup name="Top up apa hari ini" navigation={navigation}/>
     <CardGroup name="Disarankan" navigation={navigation}/>
+
+    <View>
+    <Text style={styles.text1}>Lainnya</Text>
+    <View style={styles.cardContainer}>
+      <Cardsource navigation={navigation}/>
+      <Cardsource navigation={navigation}/>
+      <Cardsource navigation={navigation}/>
+      <Cardsource navigation={navigation}/>
+      <Cardsource navigation={navigation}/>
+      <Cardsource navigation={navigation}/>
+      <Cardsource navigation={navigation}/>
+      <Cardsource navigation={navigation}/>
+      <Cardsource navigation={navigation}/>
+    </View>
+    </View>
    </View>
+   </ScrollView>
      </SafeAreaView>
   );
 }
@@ -60,5 +78,20 @@ categoryItem: {
 },
 categoryText: {
   fontSize: 18,
+},
+cardContainer: {
+  flexDirection: 'row',
+  flexWrap: 'wrap',
+  columnGap:50,
+  paddingHorizontal:30,
+  rowGap:50,
+},
+text1: {
+  fontSize:50,
+  margin:10,
+  fontWeight:'500',
+  paddingTop:20,
+  paddingLeft:20,
+  marginBottom:50
 },
 });
