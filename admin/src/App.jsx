@@ -10,7 +10,7 @@ function App() {
     <Sidebar opened={active} />
     <div>
       <button className='bg-red-500' onClick={() => setActive(state => !state)}>
-        Open
+        Open navbar
       </button>
     </div>
     </div>
