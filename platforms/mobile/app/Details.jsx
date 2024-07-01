@@ -2,6 +2,8 @@ import { ScrollView, StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
 import AmmountButton from "@/components/AmmountButton";
 
+// halo
+
 export default function Details({}) {
   return (
     <ScrollView>
