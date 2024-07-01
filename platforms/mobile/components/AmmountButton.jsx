@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-export default function AmmountButton(angka_DM) {
+export default function AmmountButton({angka_DM}) {
   return (
     <View>
      <View style={styles.Card}>
@@ -20,12 +20,12 @@ const styles = StyleSheet.create({
     width:106,
     height:43,
     borderRadius:20,
-    margin:20
+    
     },
     teksdm: {
     textAlign:"center",
     paddingTop:14,
     fontSize:17,
-    color:"white"
+    color:"white",
     }
 })
