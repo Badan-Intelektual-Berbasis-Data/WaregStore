@@ -1,9 +1,7 @@
 import React from 'react';
 import { Image, StyleSheet, ScrollView, View, Text, SafeAreaView } from 'react-native';
-import Card from '@/components/Card';
 import CardGroup from '@/components/CardGroup';
 import Cardsource from '@/components/Cardsource';
-import Kategori from '@/components/Kategori';
 
 export default function HomeScreen({ navigation }) {
   return (
@@ -14,13 +12,6 @@ export default function HomeScreen({ navigation }) {
           <Text style={styles.textheader}>Waregstore</Text>
         </View>
         <View>
-          <ScrollView horizontal={true} contentContainerStyle={styles.container}>
-            <Kategori kategori_name="Pulsa & Token" />
-            <Kategori kategori_name="Pulsa & Token" />
-            <Kategori kategori_name="Pulsa & Token" />
-            <Kategori kategori_name="Pulsa & Token" />
-          </ScrollView>
-
           {/* content */}
           <View style={styles.cardGroupContainer}>
             <CardGroup name="Top up apa hari ini" navigation={navigation} />
@@ -86,12 +77,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#fff',
   },
-  container: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: 20,
-  },
   categoryItem: {
     backgroundColor: '#f0f0f0',
     width: 200,
@@ -109,10 +94,10 @@ const styles = StyleSheet.create({
   contentContainer: {
     paddingLeft: 15,
     paddingRight: 10,
+    marginBottom: 20,
   },
   cardGroupContainer: {
     paddingHorizontal: 15,
-    paddingTop: 10,
     marginBottom: 20,
   },
   cardContainer: {

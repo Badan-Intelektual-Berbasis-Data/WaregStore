@@ -49,6 +49,13 @@ export default function TabLayout() {
           tabBarIcon: ({ color, size }) => <Ionicons name="home" color={color} size={size} />,
         }}
       />
+      <Tabs.Screen
+        name="explore" // Pastikan nama ini sesuai dengan file rute
+        options={{
+          title: 'Explore',
+          tabBarIcon: ({ color, size }) => <Ionicons name="search" color={color} size={size} />,
+        }}
+      />
     </Tabs>
   );
 }
