@@ -83,3 +83,28 @@ class ProductDetailView(APIView):
         return Response({"data" : ProductSerializer(query).data})
 
 
+
+class GoodView(GenericAPIView):
+    serializer_class = GoodsSerializer
+    queryset = Goods
+
+
+    def get(self, _):
+        query = GoodsSerializer(Goods.objects.all(), many=True)
+
+        if not query:
+            return Response(query.data, status=HTTP_404_NOT_FOUND)
+        
+        return Response(query.data)
+    
+
+    def post(self, request):
+        serializer = GoodsSerializer(data=request.POST)
+
+        if not serializer.is_valid(raise_exception=DEBUG):
+            return Response({"messege" : "Data tidak valid"}, status=HTTP_404_NOT_FOUND)
+
+        serializer.save()
+
+        return Response({"messege" : "Data baru telah ditambahkan"})
+

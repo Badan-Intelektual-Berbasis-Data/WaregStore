@@ -31,8 +31,9 @@ class UsersView(GenericAPIView):
         if not query:
             return Response({"messege" : "User tidak ditemukan"}, status=HTTP_404_NOT_FOUND)
 
+        query.save()
 
-        return Response(query.data)
+        return Response({"messege" : "Pengguna baru telah di daftarkan"})
 
 
 class UserDetailView(APIView):
@@ -43,6 +44,4 @@ class UserDetailView(APIView):
             return Response({"messege" : "Belum ada users yang di daftarkan"}, status=HTTP_404_NOT_FOUND)
 
         return Response(query.data)
-
-
     

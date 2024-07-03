@@ -36,7 +36,7 @@ class UserManager(BaseUserManager):
 class User(AbstractBaseUser, PermissionsMixin):
     name = models.CharField(max_length=255, unique=True)
     email = models.EmailField(max_length=255, unique=True)
-    phone = models.IntegerField()
+    phone = models.BigIntegerField()
     address = models.CharField(max_length=255)
     is_admin = models.BooleanField(default=False)
     date_registered = models.DateTimeField(auto_now_add=True)
