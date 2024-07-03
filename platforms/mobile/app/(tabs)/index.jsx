@@ -20,7 +20,7 @@ export default function HomeScreen({ navigation }) {
 
           <View style={styles.contentContainer}>
             <Text style={styles.text1}>Lainnya</Text>
-            <ScrollView horizontal={true} contentContainerStyle={styles.cardContainer}>
+            <View style={styles.cardContainer} horizontal={true} contentContainerStyle={styles.cardContainer}>
               <View style={styles.cardWrapper}>
                 <Cardsource navigation={navigation} />
               </View>
@@ -39,16 +39,7 @@ export default function HomeScreen({ navigation }) {
               <View style={styles.cardWrapper}>
                 <Cardsource navigation={navigation} />
               </View>
-              <View style={styles.cardWrapper}>
-                <Cardsource navigation={navigation} />
-              </View>
-              <View style={styles.cardWrapper}>
-                <Cardsource navigation={navigation} />
-              </View>
-              <View style={styles.cardWrapper}>
-                <Cardsource navigation={navigation} />
-              </View>
-            </ScrollView>
+            </View>
           </View>
         </View>
       </ScrollView>
@@ -104,6 +95,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingLeft: 10,
+    flexWrap:'wrap',
+    gap:30,
+    rowGap:20,
+    margin:20,
   },
   cardWrapper: {
     marginRight: 10,

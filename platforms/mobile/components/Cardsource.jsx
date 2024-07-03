@@ -5,7 +5,7 @@ import { Link } from 'expo-router';
 export default function Cardsource({ name }) {
   return (
     <Link href="/Details" asChild>
-      <Pressable>
+      <Pressable  style={styles.contain}>
         <Image style={styles.image} source={{ uri: 'https://eht2vhtby29.exactdn.com/wp-content/uploads/2022/10/jadwal-dan-link-live-streaming-mpli-mobile-legends_169.jpeg?strip=all&lossy=0&ssl=1' }} alt="foto" />
         {/* <Image style={styles.image} source={require("@/assets/images/react-logo.png")} alt='foto'/> */}
         <Text style={styles.text}>Honor Of King</Text>
