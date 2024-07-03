@@ -1,5 +1,5 @@
 import { ScrollView, StyleSheet, Text, View, Image } from "react-native";
-import React from "react";
+import React from "creact";
 import AmmountButton from "@/components/AmmountButton";
 
 // halo
