@@ -2,7 +2,7 @@ import React from 'react';
 import { Image, StyleSheet, ScrollView, View, Text, SafeAreaView } from 'react-native';
 import Kategori from '@/components/Kategori';
 
-export default function ExploreScreen({ navigation }) {
+export default function SearchScreen({ navigation }) {
   return (
     <SafeAreaView>
       <ScrollView>
@@ -11,12 +11,6 @@ export default function ExploreScreen({ navigation }) {
           <Text style={styles.textheader}>Waregstore</Text>
         </View>
         <View>
-          <ScrollView horizontal={true} contentContainerStyle={styles.container}>
-            <Kategori kategori_name="Game" />
-            <Kategori kategori_name="Aplikasi" />
-            <Kategori kategori_name="Pulsa & Token" />
-            <Kategori kategori_name="Pulsa & Token" />
-          </ScrollView>
         </View>
       </ScrollView>
     </SafeAreaView>

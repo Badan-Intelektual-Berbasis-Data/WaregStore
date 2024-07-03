@@ -2,6 +2,7 @@ import React from 'react';
 import { Image, StyleSheet, ScrollView, View, Text, SafeAreaView } from 'react-native';
 import CardGroup from '@/components/CardGroup';
 import Cardsource from '@/components/Cardsource';
+import Kategori from '@/components/Kategori';
 
 export default function HomeScreen({ navigation }) {
   return (
@@ -12,6 +13,12 @@ export default function HomeScreen({ navigation }) {
           <Text style={styles.textheader}>Waregstore</Text>
         </View>
         <View>
+        <ScrollView horizontal={true} contentContainerStyle={styles.container}>
+            <Kategori kategori_name="Game" />
+            <Kategori kategori_name="Aplikasi" />
+            <Kategori kategori_name="Pulsa & Token" />
+            <Kategori kategori_name="Pulsa & Token" />
+          </ScrollView>
           {/* content */}
           <View style={styles.cardGroupContainer}>
             <CardGroup name="Top up apa hari ini" navigation={navigation} />

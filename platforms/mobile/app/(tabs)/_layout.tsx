@@ -50,9 +50,9 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="explore" // Pastikan nama ini sesuai dengan file rute
+        name="search" // Pastikan nama ini sesuai dengan file rute
         options={{
-          title: 'Explore',
+          title: 'search',
           tabBarIcon: ({ color, size }) => <Ionicons name="search" color={color} size={size} />,
         }}
       />
