@@ -56,6 +56,20 @@ export default function TabLayout() {
           tabBarIcon: ({ color, size }) => <Ionicons name="search" color={color} size={size} />,
         }}
       />
+      <Tabs.Screen
+        name="cart" // Pastikan nama ini sesuai dengan file rute
+        options={{
+          title: 'Cart',
+          tabBarIcon: ({ color, size }) => <Ionicons name="cart" color={color} size={size} />,
+        }}
+      />
+      <Tabs.Screen
+        name="profile" // Pastikan nama ini sesuai dengan file rute
+        options={{
+          title: 'Profile',
+          tabBarIcon: ({ color, size }) => <Ionicons name="person" color={color} size={size} />,
+        }}
+      />
     </Tabs>
   );
 }
