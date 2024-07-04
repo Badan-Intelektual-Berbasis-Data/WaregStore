@@ -15,14 +15,16 @@ export default function Cardsource({ name }) {
 }
 
 const styles = StyleSheet.create({
+  contain:{
+  },
   image: {
-    width: 110,
-    height: 110,
-    borderRadius: 20,
+    width: 60,
+    height: 60,
+    borderRadius: 10,
   },
   text: {
     color: 'black',
-    fontSize: 16,
+    fontSize: 10,
     textAlign: 'center',
   },
 });

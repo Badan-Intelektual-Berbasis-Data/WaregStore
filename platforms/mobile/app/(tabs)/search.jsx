@@ -1,14 +1,8 @@
-<<<<<<< HEAD
-import React from 'react';
-import { Image, StyleSheet, ScrollView, View, Text, SafeAreaView } from 'react-native';
-import Kategori from '@/components/Kategori';
-import Card from '@/components/Card';
-=======
 import React, { useState } from 'react';
 import { Image, StyleSheet, ScrollView, View, Text, SafeAreaView, TextInput, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import CardGroup from '@/components/CardGroup';
->>>>>>> 4f734ccffeb61a8a70beecaa8938e915c257f93e
+import Card from '@/components/Card';
 
 export default function SearchScreen({ navigation }) {
   const [searchQuery, setSearchQuery] = useState('');
@@ -29,10 +23,6 @@ export default function SearchScreen({ navigation }) {
           <TouchableOpacity style={styles.searchButton} onPress={handleSearch}>
             <Ionicons name="search" size={17} color="#fff" />
           </TouchableOpacity>
-        </View>
-
-        <View style={styles.cardGroupContainer}>
-          <CardGroup navigation={navigation} />
         </View>
         <View style={styles.search}>
           <Card/>

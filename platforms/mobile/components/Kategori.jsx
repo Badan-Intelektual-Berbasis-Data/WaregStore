@@ -1,17 +1,13 @@
-import React, { useState } from 'react';
-import { TouchableOpacity, Text, StyleSheet } from 'react-native';
+import React from 'react';
+import { TouchableOpacity, Text, StyleSheet, Pressable } from 'react-native';
 
-export default function Kategori({ kategori_name }) {
-  const [isSelected, setIsSelected] = useState(false);
-
-  const handlePress = () => {
-    setIsSelected(!isSelected);
-  };
+export default function Kategori({ kategori_name, isSelected, handlePress }) {
+ 
 
   return (
-    <TouchableOpacity style={[styles.categoryItem, isSelected && styles.selectedCategoryItem]} onPress={handlePress}>
+    <Pressable style={[styles.categoryItem, isSelected && styles.selectedCategoryItem]} onPress={handlePress}>
       <Text style={[styles.categoryText, isSelected && styles.selectedCategoryText]}>{kategori_name}</Text>
-    </TouchableOpacity>
+    </Pressable>
   );
 }
 
@@ -19,7 +15,7 @@ const styles = StyleSheet.create({
   categoryItem: {
     marginTop: 40,
     backgroundColor: '#f0f0f0',
-    width: 120,
+    width: 200,
     height: 45,
     justifyContent: 'center',
     alignItems: 'center',

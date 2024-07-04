@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Image, StyleSheet, ScrollView, View, Text, SafeAreaView } from 'react-native';
 import CardGroup from '@/components/CardGroup';
 import Cardsource from '@/components/Cardsource';
 import Kategori from '@/components/Kategori';
 
 export default function HomeScreen({ navigation }) {
+
+  const [isSelected, setIsSelected] = useState(false);
+
+  const handlePress = (i) => {
+    setIsSelected(i);
+  };
+
+
   return (
     <SafeAreaView>
       <ScrollView>
@@ -14,10 +22,10 @@ export default function HomeScreen({ navigation }) {
         </View>
         <View>
           <ScrollView horizontal={true} contentContainerStyle={styles.categoryContainer}>
-            <Kategori kategori_name="Game" />
-            <Kategori kategori_name="Aplikasi" />
-            <Kategori kategori_name="Pulsa" />
-            <Kategori kategori_name="Token" />
+            <Kategori kategori_name="Game" handlePress={() => handlePress(1)} isSelected={isSelected == 1 ? true : false}/>
+            <Kategori kategori_name="Aplikasi" handlePress={() => handlePress(2)} isSelected={isSelected == 2 ? true : false}/>
+            <Kategori kategori_name="Pulsa" handlePress={() => handlePress(3)} isSelected={isSelected == 3 ? true : false}/>
+            <Kategori kategori_name="Token" handlePress={() => handlePress(4)} isSelected={isSelected == 4 ? true : false}/>
           </ScrollView>
           {/* content */}
           <View style={styles.cardGroupContainer}>
