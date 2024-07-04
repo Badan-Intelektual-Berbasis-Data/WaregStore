@@ -7,6 +7,7 @@ import { Ionicons } from '@expo/vector-icons';
 // Komponen SplashScreen
 const SplashScreen = () => (
   <View style={styles.splashContainer}>
+    <Image source={require('@/assets/images/logowaregstore.png')} style={styles.logo} />
     <Text style={styles.text}>WAREGSTORE</Text>
   </View>
 );
@@ -81,9 +82,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#f7287b',
   },
-  image: {
-    width: 200,
-    height: 200,
+  logo: {
+    width: 120,
+    height: 120,
+    borderRadius: 60,
     marginBottom: 20,
   },
   text: {

@@ -14,7 +14,7 @@ export default function SearchScreen({ navigation }) {
     <SafeAreaView style={styles.safeArea}>
       <ScrollView contentContainerStyle={styles.scrollViewContent}>
         <View style={styles.header}>
-          <Image source={require('@/assets/images/react-logo.png')} style={styles.logo} />
+          <Image source={require('@/assets/images/logowaregstore.png')} style={styles.logo} />
           <Text style={styles.textheader}>Waregstore</Text>
         </View>
         <View style={styles.searchContainer}>
@@ -45,8 +45,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   logo: {
-    width: 30,
-    height: 30,
+    width: 40,
+    height: 40,
     marginRight: 10,
     marginTop: 10,
   },
