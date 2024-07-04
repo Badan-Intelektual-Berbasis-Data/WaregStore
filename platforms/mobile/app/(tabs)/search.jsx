@@ -1,6 +1,7 @@
 import React from 'react';
 import { Image, StyleSheet, ScrollView, View, Text, SafeAreaView } from 'react-native';
 import Kategori from '@/components/Kategori';
+import Card from '@/components/Card';
 
 export default function SearchScreen({ navigation }) {
   return (
@@ -11,6 +12,13 @@ export default function SearchScreen({ navigation }) {
           <Text style={styles.textheader}>Waregstore</Text>
         </View>
         <View>
+        </View>
+        <View style={styles.search}>
+          <Card/>
+          <Card/>
+          <Card/>
+          <Card/>
+          <Card/>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -43,5 +51,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 20,
+  },
+  search: {
+    gap:30,
+    margin:20
   },
 });

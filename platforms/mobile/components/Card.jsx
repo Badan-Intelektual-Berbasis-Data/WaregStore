@@ -19,7 +19,9 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   image: {
-    width: 350,
+    width: '100%',
+    objectFit:'cover',
+    minWidth:350,
     height: 150,
     borderRadius: 20,
     marginBottom: 10,

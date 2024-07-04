@@ -4,7 +4,7 @@ import React from 'react'
 export default function AmmountButton({angka_DM}) {
   return (
     <View>
-     <View style={styles.Card}>
+    <View style={styles.Card}>
       <Text style={styles.teksdm}>{angka_DM}</Text>
       </View>
     </View>
