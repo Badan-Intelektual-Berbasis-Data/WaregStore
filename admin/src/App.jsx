@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Sidebar from './components/Sidebar'
 
+
 function App() {
   const [active, setActive] = useState(true)
 
@@ -20,6 +21,9 @@ function App() {
       {/* <img className='p-10 w-full h-3/6 ' src="https://cdn.idntimes.com/content-images/community/2019/06/razer-blade-stealth-open-100763052-large-cc6ea3af72b05909709ce04df09aad4f_600x400.jpg" alt="" /> */}
     </div>
     </div>
+
+
+
     
   )
 }
