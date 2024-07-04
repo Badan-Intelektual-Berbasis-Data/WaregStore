@@ -1,0 +1,12 @@
+.blue-line {
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    width: 87vw; 
+    margin: 0; 
+    box-sizing: border-box; 
+  }
+  
