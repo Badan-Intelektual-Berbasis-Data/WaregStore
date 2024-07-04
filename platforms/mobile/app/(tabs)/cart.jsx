@@ -33,6 +33,42 @@ export default function CartScreen({ navigation }) {
             </TouchableOpacity>
           </View>
         </View>
+        <View style={styles.cartContainer}>
+          <View style={styles.itemInfoContainer}>
+            <Text style={styles.itemText}>Paket Diamond 100</Text>
+            <Text style={styles.statusText}>Diproses</Text>
+          </View>
+          <View style={styles.actionsContainer}>
+            <TouchableOpacity style={styles.actionButton} onPress={decreaseQuantity}>
+              <Text style={styles.actionText}>-</Text>
+            </TouchableOpacity>
+            <Text style={styles.quantityText}>{quantity}</Text>
+            <TouchableOpacity style={styles.actionButton} onPress={increaseQuantity}>
+              <Text style={styles.actionText}>+</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => console.log('Buang')}>
+              <Text style={styles.removeText}>Buang</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+        <View style={styles.cartContainer}>
+          <View style={styles.itemInfoContainer}>
+            <Text style={styles.itemText}>Paket Diamond 100</Text>
+            <Text style={styles.statusText}>Diproses</Text>
+          </View>
+          <View style={styles.actionsContainer}>
+            <TouchableOpacity style={styles.actionButton} onPress={decreaseQuantity}>
+              <Text style={styles.actionText}>-</Text>
+            </TouchableOpacity>
+            <Text style={styles.quantityText}>{quantity}</Text>
+            <TouchableOpacity style={styles.actionButton} onPress={increaseQuantity}>
+              <Text style={styles.actionText}>+</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => console.log('Buang')}>
+              <Text style={styles.removeText}>Buang</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
