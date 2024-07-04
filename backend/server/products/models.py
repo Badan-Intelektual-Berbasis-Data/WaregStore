@@ -21,7 +21,7 @@ class Product(models.Model):
 
 class Goods(models.Model):
     name = models.CharField(max_length=2555)
-    ammount = models.IntegerField()
+    price = models.IntegerField()
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     available_status = models.BooleanField(default=True)
     date_added = models.DateTimeField(auto_now_add=True, editable=False)
