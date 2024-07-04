@@ -5,13 +5,11 @@ import Cardsource from '@/components/Cardsource';
 import Kategori from '@/components/Kategori';
 
 export default function HomeScreen({ navigation }) {
-
   const [isSelected, setIsSelected] = useState(false);
 
   const handlePress = (i) => {
     setIsSelected(i);
   };
-
 
   return (
     <SafeAreaView>
@@ -22,10 +20,10 @@ export default function HomeScreen({ navigation }) {
         </View>
         <View>
           <ScrollView horizontal={true} contentContainerStyle={styles.categoryContainer}>
-            <Kategori kategori_name="Game" handlePress={() => handlePress(1)} isSelected={isSelected == 1 ? true : false}/>
-            <Kategori kategori_name="Aplikasi" handlePress={() => handlePress(2)} isSelected={isSelected == 2 ? true : false}/>
-            <Kategori kategori_name="Pulsa" handlePress={() => handlePress(3)} isSelected={isSelected == 3 ? true : false}/>
-            <Kategori kategori_name="Token" handlePress={() => handlePress(4)} isSelected={isSelected == 4 ? true : false}/>
+            <Kategori kategori_name="Game" handlePress={() => handlePress(1)} isSelected={isSelected == 1 ? true : false} />
+            <Kategori kategori_name="Aplikasi" handlePress={() => handlePress(2)} isSelected={isSelected == 2 ? true : false} />
+            <Kategori kategori_name="Pulsa" handlePress={() => handlePress(3)} isSelected={isSelected == 3 ? true : false} />
+            <Kategori kategori_name="Token" handlePress={() => handlePress(4)} isSelected={isSelected == 4 ? true : false} />
           </ScrollView>
           {/* content */}
           <View style={styles.cardGroupContainer}>
@@ -109,7 +107,7 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   text1: {
-    fontSize: 30,
+    fontSize: 20,
     fontWeight: '500',
     marginVertical: 10,
     marginLeft: 15,
