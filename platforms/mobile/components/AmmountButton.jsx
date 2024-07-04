@@ -5,10 +5,12 @@ export default function AmmountButton({ angka_DM }) {
   const [isActive, setIsActive] = useState(false);
 
   return (
-    <TouchableOpacity style={[styles.Card, isActive && styles.CardActive]} onPress={() => setIsActive(!isActive)}>
-      <Text style={[styles.teksdm, isActive && styles.teksdmActive]}>{angka_DM}</Text>
-    </TouchableOpacity>
-  );
+    <View>
+     <View style={styles.Card}>
+      <Text style={styles.teksdm}>{angka_DM}</Text>
+      </View>
+    </View>
+  )
 }
 
 const styles = StyleSheet.create({

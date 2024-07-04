@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     gap: 20,
   },
   title: {
-    fontSize: 30,
+    fontSize: 20,
     margin: 10,
     fontWeight: '500',
     paddingTop: 30,

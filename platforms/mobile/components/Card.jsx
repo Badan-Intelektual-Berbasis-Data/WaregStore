@@ -19,15 +19,16 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   image: {
-    width: 350,
+    width: 320,
+    objectFit:'cover',
     height: 150,
     borderRadius: 20,
     marginBottom: 10,
-    marginLeft: 10,
+    marginTop:10,
   },
   text: {
     color: 'black',
-    fontSize: 24,
+    fontSize: 15,
     marginLeft: 15,
   },
 });

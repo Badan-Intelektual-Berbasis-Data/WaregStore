@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Image, StyleSheet, ScrollView, View, Text, SafeAreaView, TextInput, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import CardGroup from '@/components/CardGroup';
+import Card from '@/components/Card';
 
 export default function SearchScreen({ navigation }) {
   const [searchQuery, setSearchQuery] = useState('');
@@ -23,9 +24,12 @@ export default function SearchScreen({ navigation }) {
             <Ionicons name="search" size={17} color="#fff" />
           </TouchableOpacity>
         </View>
-
-        <View style={styles.cardGroupContainer}>
-          <CardGroup navigation={navigation} />
+        <View style={styles.search}>
+          <Card/>
+          <Card/>
+          <Card/>
+          <Card/>
+          <Card/>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -87,5 +91,9 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     justifyContent: 'flex-start',
     paddingBottom: 10,
+  },
+  search: {
+    gap:30,
+    margin:20
   },
 });
