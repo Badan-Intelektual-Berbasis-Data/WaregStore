@@ -17,8 +17,8 @@ export default function Product() {
            <tr>
              <th>ID</th>
              <th>Name</th>
-             <th>Price</th>
-             <th>Category</th>
+             <th>Stok</th>
+             <th>Status</th>
            </tr>
          </thead>
          <tbody>
