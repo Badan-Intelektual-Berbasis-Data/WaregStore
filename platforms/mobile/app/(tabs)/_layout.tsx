@@ -50,21 +50,21 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="search" // Pastikan nama ini sesuai dengan file rute
+        name="search"
         options={{
-          title: 'search',
+          title: 'Search',
           tabBarIcon: ({ color, size }) => <Ionicons name="search" color={color} size={size} />,
         }}
       />
       <Tabs.Screen
-        name="cart" // Pastikan nama ini sesuai dengan file rute
+        name="cart"
         options={{
           title: 'Cart',
           tabBarIcon: ({ color, size }) => <Ionicons name="cart" color={color} size={size} />,
         }}
       />
       <Tabs.Screen
-        name="profile" // Pastikan nama ini sesuai dengan file rute
+        name="profile"
         options={{
           title: 'Profile',
           tabBarIcon: ({ color, size }) => <Ionicons name="person" color={color} size={size} />,

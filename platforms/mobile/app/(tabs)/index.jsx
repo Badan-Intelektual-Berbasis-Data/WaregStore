@@ -13,11 +13,11 @@ export default function HomeScreen({ navigation }) {
           <Text style={styles.textheader}>Waregstore</Text>
         </View>
         <View>
-        <ScrollView horizontal={true} contentContainerStyle={styles.container}>
+          <ScrollView horizontal={true} contentContainerStyle={styles.categoryContainer}>
             <Kategori kategori_name="Game" />
             <Kategori kategori_name="Aplikasi" />
-            <Kategori kategori_name="Pulsa & Token" />
-            <Kategori kategori_name="Pulsa & Token" />
+            <Kategori kategori_name="Pulsa" />
+            <Kategori kategori_name="Token" />
           </ScrollView>
           {/* content */}
           <View style={styles.cardGroupContainer}>
@@ -75,19 +75,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#fff',
   },
-  categoryItem: {
-    backgroundColor: '#f0f0f0',
-    width: 200,
-    height: 50,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 10,
-    borderRadius: 10,
-    borderWidth: 1,
-    borderColor: '#ccc',
-  },
-  categoryText: {
-    fontSize: 18,
+  categoryContainer: {
+    paddingHorizontal: 20,
+    paddingVertical: 10,
   },
   contentContainer: {
     paddingLeft: 15,
@@ -102,10 +92,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingLeft: 10,
-    flexWrap:'wrap',
-    gap:30,
-    rowGap:20,
-    margin:20,
+    flexWrap: 'wrap',
+    gap: 30,
+    rowGap: 20,
+    margin: 20,
   },
   cardWrapper: {
     marginRight: 10,
