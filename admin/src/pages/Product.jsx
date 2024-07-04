@@ -7,10 +7,9 @@ export default function Product() {
   ];
 
   return (
-    <div className="flex items-center justify-center min-h-screen p-4">
-      <div className="w-full">
-        <h1 className="text-2xl font-bold mb-4 text-center bg-blue-500 text-white py-2 rounded">Product List</h1>
-        <table className="w-full bg-white border border-gray-200">
+    <div className="w-auto">
+        <h1 className="text-2xl font-bold mb-5 text-center bg-red-500 text-white py-2 rounded" >Product List</h1>
+        <table className=" bg-white border border-gray-200">
           <thead>
             <tr>
               <th className="py-2 px-4 border-b">ID</th>
@@ -30,7 +29,6 @@ export default function Product() {
             ))}
           </tbody>
         </table>
-      </div>
     </div>
   );
 };
