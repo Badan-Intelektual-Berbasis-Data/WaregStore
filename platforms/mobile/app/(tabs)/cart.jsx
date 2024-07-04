@@ -1,12 +1,25 @@
 import React, { useState } from 'react';
 import { Image, StyleSheet, ScrollView, View, Text, SafeAreaView, TouchableOpacity } from 'react-native';
 
+//Semangat Kakak-kakak.
 export default function CartScreen({ navigation }) {
-  const [quantity, setQuantity] = useState(1);
+  const [items, setItems] = useState([
+    { id: 1, name: 'Paket Diamond 100', quantity: 1, status: 'Diproses' },
+    { id: 2, name: 'Paket Diamond 100', quantity: 1, status: 'Diproses' },
+    { id: 3, name: 'Paket Diamond 100', quantity: 1, status: 'Diproses' },
+  ]);
 
-  const increaseQuantity = () => setQuantity((prevQuantity) => prevQuantity + 1);
+  const increaseQuantity = (id) => {
+    setItems(items.map((item) => (item.id === id ? { ...item, quantity: item.quantity + 1 } : item)));
+  };
 
-  const decreaseQuantity = () => setQuantity((prevQuantity) => (prevQuantity > 1 ? prevQuantity - 1 : 1));
+  const decreaseQuantity = (id) => {
+    setItems(items.map((item) => (item.id === id ? { ...item, quantity: item.quantity > 1 ? item.quantity - 1 : 1 } : item)));
+  };
+
+  const removeItem = (id) => {
+    setItems(items.filter((item) => item.id !== id));
+  };
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -15,60 +28,26 @@ export default function CartScreen({ navigation }) {
           <Image source={require('@/assets/images/logowaregstore.png')} style={styles.logo} />
           <Text style={styles.textheader}>Waregstore</Text>
         </View>
-        <View style={styles.cartContainer}>
-          <View style={styles.itemInfoContainer}>
-            <Text style={styles.itemText}>Paket Diamond 100</Text>
-            <Text style={styles.statusText}>Diproses</Text>
+        {items.map((item) => (
+          <View key={item.id} style={styles.cartContainer}>
+            <View style={styles.itemInfoContainer}>
+              <Text style={styles.itemText}>{item.name}</Text>
+              <Text style={styles.statusText}>{item.status}</Text>
+            </View>
+            <View style={styles.actionsContainer}>
+              <TouchableOpacity style={styles.actionButton} onPress={() => decreaseQuantity(item.id)}>
+                <Text style={styles.actionText}>-</Text>
+              </TouchableOpacity>
+              <Text style={styles.quantityText}>{item.quantity}</Text>
+              <TouchableOpacity style={styles.actionButton} onPress={() => increaseQuantity(item.id)}>
+                <Text style={styles.actionText}>+</Text>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => removeItem(item.id)}>
+                <Text style={styles.removeText}>Buang</Text>
+              </TouchableOpacity>
+            </View>
           </View>
-          <View style={styles.actionsContainer}>
-            <TouchableOpacity style={styles.actionButton} onPress={decreaseQuantity}>
-              <Text style={styles.actionText}>-</Text>
-            </TouchableOpacity>
-            <Text style={styles.quantityText}>{quantity}</Text>
-            <TouchableOpacity style={styles.actionButton} onPress={increaseQuantity}>
-              <Text style={styles.actionText}>+</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => console.log('Buang')}>
-              <Text style={styles.removeText}>Buang</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
-        <View style={styles.cartContainer}>
-          <View style={styles.itemInfoContainer}>
-            <Text style={styles.itemText}>Paket Diamond 100</Text>
-            <Text style={styles.statusText}>Diproses</Text>
-          </View>
-          <View style={styles.actionsContainer}>
-            <TouchableOpacity style={styles.actionButton} onPress={decreaseQuantity}>
-              <Text style={styles.actionText}>-</Text>
-            </TouchableOpacity>
-            <Text style={styles.quantityText}>{quantity}</Text>
-            <TouchableOpacity style={styles.actionButton} onPress={increaseQuantity}>
-              <Text style={styles.actionText}>+</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => console.log('Buang')}>
-              <Text style={styles.removeText}>Buang</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
-        <View style={styles.cartContainer}>
-          <View style={styles.itemInfoContainer}>
-            <Text style={styles.itemText}>Paket Diamond 100</Text>
-            <Text style={styles.statusText}>Diproses</Text>
-          </View>
-          <View style={styles.actionsContainer}>
-            <TouchableOpacity style={styles.actionButton} onPress={decreaseQuantity}>
-              <Text style={styles.actionText}>-</Text>
-            </TouchableOpacity>
-            <Text style={styles.quantityText}>{quantity}</Text>
-            <TouchableOpacity style={styles.actionButton} onPress={increaseQuantity}>
-              <Text style={styles.actionText}>+</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => console.log('Buang')}>
-              <Text style={styles.removeText}>Buang</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
+        ))}
       </ScrollView>
     </SafeAreaView>
   );
