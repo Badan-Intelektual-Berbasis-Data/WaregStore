@@ -20,11 +20,11 @@ const styles = StyleSheet.create({
   },
   image: {
     width: 320,
-    objectFit:'cover',
+    objectFit: 'cover',
     height: 150,
     borderRadius: 20,
     marginBottom: 10,
-    marginTop:10,
+    marginTop: 10,
   },
   text: {
     color: 'black',
