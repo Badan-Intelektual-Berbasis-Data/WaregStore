@@ -8,6 +8,6 @@ from .views import (
 
 urlpatterns = [
     path('', UsersView.as_view()),
-    path('detail/<str:name>', UserDetailView.as_view()),
+    path('detail/<str:name>/', UserDetailView.as_view()),
     path('login', LoginView.as_view()),
 ]
