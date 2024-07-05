@@ -9,10 +9,9 @@ from rest_framework.status import (
     HTTP_404_NOT_FOUND
 )
 from rest_framework_simplejwt.tokens import RefreshToken
-from .serializers import (
-    UserSerializer,
-)
+from .serializers import UserSerializer
 from server.settings import DEBUG
+
 
 class UsersView(GenericAPIView):
     queryset = get_user_model()

@@ -13,8 +13,11 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 from dotenv import load_dotenv
 from os import getenv
+from pymysql import install_as_MySQLdb
 
 
+
+install_as_MySQLdb()
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -33,7 +36,7 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', '127.0.0.1:3000']
 
 CORS_ALLOWED_HOSTS = [
     'localhost',
-    '127.0.0.1'
+    '127.0.0.1',
     '127.0.0.1:3000'
 ]
 
@@ -88,6 +91,7 @@ WSGI_APPLICATION = 'server.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -96,6 +100,9 @@ DATABASES = {
         'PASSWORD': str(getenv('DATABASE_PASSWORD')),
         'HOST': str(getenv('DATABASE_HOST')),
         'PORT': str(getenv('DATABASE_PORT')),
+        'OPTIONS': {
+            'init_command': 'SET sql_mode="STRICT_TRANS_TABLES"',
+        }
     }
 }
 
