@@ -2,8 +2,8 @@ export default function Product() {
  
   const products = [
     { id: 78374397, name: 'PUBG', price: '100', category: 'ok',
-       idapp: 7837387766, nameapp: 'DANA', priceapp: '100.000.00', categoryapp: 'ok',
-       idpulsa: 3873288, namepulsa: 'XL', pricepulsa: '100', categorypulsa: 'ok' },
+      idapp: 7837387766, nameapp: 'DANA', priceapp: '100.000.00', categoryapp: 'ok',
+      idpulsa: 3873288, namepulsa: 'XL', pricepulsa: '100', categorypulsa: 'ok' },
     { id: 38836483, name: 'MOBILE LEGEND', price: '100', category: 'ok',
       idapp: 3887387766, nameapp: 'OVO', priceapp: '2.000.000.00', categoryapp: 'ok',
       idpulsa: 7873288, namepulsa: 'TELKOMSEL', pricepulsa: '100', categorypulsa: 'ok' },
@@ -19,14 +19,14 @@ export default function Product() {
   return (
     // GAME
     <div class="scroll-m-64 w-[88vw]">
+      
       <div>
-
         <h1 className="text-2xl font-bold mb-5 text-center bg-indigo-600 text-white py-2 rounded" >Product List</h1>
-            <h1 className="text-2xl font-bold mb-3 text-center bg-zinc-500 text-white py-2 rounded w-full" >GAME</h1>
-        <table className=" bg-white border border-gray-200 scroll-m-64 w-[88vw] border-separate  ">
+        <h1 className="text-2xl font-bold mb-0 text-center bg-zinc-400 text-white py-2 rounded w-full" >GAME</h1>
+        <table className="  border-gray-100 bg-gray-200 scroll-m-64 w-[88vw] border-separate  ">
           <thead>
-            <tr>
-              <th className="py-2 px-4 border-b ">ID</th>
+            <tr className="bg-zinc-300 ">
+              <th className="py-2 px-4 border-b">ID</th>
               <th className="py-2 px-4 border-b">Name</th>
               <th className="py-2 px-4 border-b">Stock</th>
               <th className="py-2 px-4 border-b">Status</th>
@@ -43,17 +43,17 @@ export default function Product() {
             ))}
           </tbody>
         </table>
-        </div>
+      </div>
         {/* APP */}
-        <div>
-            <h1 className="text-2xl font-bold mb-3 text-center bg-zinc-500 text-white py-2 rounded w-full" >APP</h1>
-        <table className=" bg-white border border-gray-200 scroll-m-64 w-[88vw] border-separate  ">
+      <div>
+        <h1 className="text-2xl font-bold mb-0 text-center bg-zinc-400 text-white py-2 rounded w-full" >APP</h1>
+        <table className="  border-gray-100 bg-gray-200 scroll-m-64 w-[88vw] border-separate  ">
           <thead>
-            <tr>
-              <th className="py-1 px-4 border-b ">ID</th>
-              <th className="py-1 px-4 border-b">Name</th>
-              <th className="py-1 px-4 border-b">Stock</th>
-              <th className="py-1 px-4 border-b">Status</th>
+            <tr className="bg-zinc-300">
+              <th className="py-2 px-4 border-b">ID</th>
+              <th className="py-2 px-4 border-b">Name</th>
+              <th className="py-2 px-4 border-b">Stock</th>
+              <th className="py-2 px-4 border-b">Status</th>
             </tr>
           </thead>
           <tbody className="scroll-m-64 w-[88vw]">
@@ -67,14 +67,14 @@ export default function Product() {
             ))}
           </tbody>
         </table>
-        </div>
+      </div>
         {/* PULSA */}
 
-        <div>
-            <h1 className="text-2xl font-bold mb-3 text-center bg-zinc-500 text-white py-2 rounded w-full" >PULSA</h1>
-        <table className=" bg-white border border-gray-200 scroll-m-64 w-[88vw] border-separate  ">
+      <div>
+            <h1 className="text-2xl font-bold mb-0 text-center bg-zinc-400 text-white py-2 rounded w-full" >PULSA</h1>
+        <table className="bg-gray-200 border-gray-100 scroll-m-64 w-[88vw] border-separate  ">
           <thead>
-            <tr>
+            <tr className="bg-zinc-300">
               <th className="py-2 px-4 border-b ">ID</th>
               <th className="py-2 px-4 border-b">Name</th>
               <th className="py-2 px-4 border-b">Stock</th>
@@ -92,7 +92,7 @@ export default function Product() {
             ))}
           </tbody>
         </table>
-        </div>
+      </div>
 
         
     </div>
