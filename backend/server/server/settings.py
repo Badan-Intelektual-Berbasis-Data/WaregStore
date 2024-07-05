@@ -32,12 +32,13 @@ SECRET_KEY = 'django-insecure-1ldgzft6by6j*av$-58rtg*i)2x*m83@9)j_t8^s_n2#ydi*+6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '127.0.0.1:3000']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '127.0.0.1:3000', 'api.waregstore.biz.id']
 
 CORS_ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    '127.0.0.1:3000'
+    '127.0.0.1:3000',
+    'api.waregstore.biz.id'
 ]
 
 # Application definition
