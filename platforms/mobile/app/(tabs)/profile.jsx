@@ -2,7 +2,7 @@ import React from 'react';
 import { Image, StyleSheet, ScrollView, View, Text, SafeAreaView, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
-export default function ProfileScreen({ navigation }) {
+export default function ProfileScreen() {
   return (
     <SafeAreaView style={styles.safeArea}>
       <ScrollView contentContainerStyle={styles.scrollViewContent}>

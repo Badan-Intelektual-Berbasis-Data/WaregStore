@@ -1,5 +1,6 @@
 from django.contrib.auth import get_user_model, authenticate
 from django.middleware.csrf import get_token
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
 from rest_framework.generics import GenericAPIView
 from rest_framework.response import Response
@@ -40,11 +41,14 @@ class UsersView(GenericAPIView):
 
 
 class UserDetailView(APIView):
-    def get(self, _, user):
-        query = UserSerializer(get_user_model().objects.filter(name=user))
+    permission_classes = [IsAuthenticated]
+
+
+    def get(self, _, name):
+        query = UserSerializer(get_user_model().objects.filter(name=name), many=True)
 
         if not query:
-            return Response({"messege" : "Belum ada users yang di daftarkan"}, status=HTTP_404_NOT_FOUND)
+            return Response({"messege" : "User tidak ditemukan"}, status=HTTP_404_NOT_FOUND)
 
         return Response(query.data)
 

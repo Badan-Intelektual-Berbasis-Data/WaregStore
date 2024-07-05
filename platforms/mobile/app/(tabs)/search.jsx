@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { Image, StyleSheet, ScrollView, View, Text, SafeAreaView, TextInput, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import CardGroup from '@/components/CardGroup';
 import Card from '@/components/Card';
 
-export default function SearchScreen({ navigation }) {
+export default function SearchScreen() {
   const [searchQuery, setSearchQuery] = useState('');
 
   const handleSearch = () => {
@@ -63,7 +62,7 @@ const styles = StyleSheet.create({
   searchContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: 20,
+    marginTop: 30,
     marginHorizontal: 20,
     backgroundColor: '#fff',
     borderRadius: 10,
@@ -75,6 +74,7 @@ const styles = StyleSheet.create({
   searchInput: {
     flex: 1,
     fontSize: 16,
+    outlineStyle: 'none'
   },
   searchButton: {
     backgroundColor: '#f7287b',
@@ -93,7 +93,8 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
   },
   search: {
-    gap:30,
-    margin:20
+    gap:50,
+    paddingHorizontal:20,
+    marginTop: 50
   },
 });

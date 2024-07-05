@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Image, StyleSheet, ScrollView, View, Text, SafeAreaView, TouchableOpacity } from 'react-native';
 
 //Semangat Kakak-kakak.
-export default function CartScreen({ navigation }) {
+export default function CartScreen() {
   const [items, setItems] = useState([
     { id: 1, name: 'Paket Diamond 100', quantity: 1, status: 'Diproses' },
     { id: 2, name: 'Paket Diamond 100', quantity: 1, status: 'Diproses' },
