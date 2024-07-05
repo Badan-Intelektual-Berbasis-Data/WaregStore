@@ -1,26 +1,27 @@
 import React, { useState } from 'react'; 
 import { Image, StyleSheet, ScrollView, View, Text, SafeAreaView, TouchableOpacity, Pressable } from 'react-native'; 
- 
-//Semangat Kakak-kakak. 
+import { useNavigation } from '@react-navigation/native'; // Tambahkan ini
+
 export default function CartScreen() { 
+  const navigation = useNavigation(); // Tambahkan ini
   const [items, setItems] = useState([ 
     { id: 1, name: 'Paket Diamond 100', quantity: 1, status: 'Diproses' }, 
     { id: 2, name: 'Paket Diamond 100', quantity: 1, status: 'Diproses' }, 
     { id: 3, name: 'Paket Diamond 100', quantity: 1, status: 'Diproses' }, 
   ]); 
- 
+
   const increaseQuantity = (id) => { 
     setItems(items.map((item) => (item.id === id ? { ...item, quantity: item.quantity + 1 } : item))); 
   }; 
- 
+
   const decreaseQuantity = (id) => { 
     setItems(items.map((item) => (item.id === id ? { ...item, quantity: item.quantity > 1 ? item.quantity - 1 : 1 } : item))); 
   }; 
- 
+
   const removeItem = (id) => { 
     setItems(items.filter((item) => item.id !== id)); 
   }; 
- 
+
   return ( 
     <SafeAreaView style={styles.safeArea}> 
       <ScrollView contentContainerStyle={styles.scrollViewContent}> 
@@ -61,14 +62,14 @@ export default function CartScreen() {
           <Text style={styles.summaryText2}>Diskon</Text> 
           <Text style={styles.summaryText2}>Rp.2000</Text> 
         </View> 
-        <Pressable style={styles.paymentButton}> 
+        <Pressable style={styles.paymentButton} onPress={() => navigation.navigate('Pembayaran')}> 
           <Text style={styles.paymentButtonText}>Ke Pembayaran</Text> 
         </Pressable> 
       </View> 
     </SafeAreaView> 
   ); 
 } 
- 
+
 const styles = StyleSheet.create({ 
   safeArea: { 
     flex: 1, 
