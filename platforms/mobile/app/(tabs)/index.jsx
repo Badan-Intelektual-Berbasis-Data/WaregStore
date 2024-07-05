@@ -4,7 +4,7 @@ import CardGroup from '@/components/CardGroup';
 import Cardsource from '@/components/Cardsource';
 import Kategori from '@/components/Kategori';
 
-export default function HomeScreen({ navigation }) {
+export default function HomeScreen() {
   const [isSelected, setIsSelected] = useState(false);
 
   const handlePress = (i) => {
@@ -27,30 +27,30 @@ export default function HomeScreen({ navigation }) {
           </ScrollView>
           {/* content */}
           <View style={styles.cardGroupContainer}>
-            <CardGroup name="Top up apa hari ini" navigation={navigation} />
-            <CardGroup name="Lagi Diskon Nih" navigation={navigation} />
+            <CardGroup name="Top up apa hari ini"  />
+            <CardGroup name="Lagi Diskon Nih"  />
           </View>
 
           <View style={styles.contentContainer}>
             <Text style={styles.text1}>Lainnya</Text>
             <View style={styles.cardContainer} horizontal={true} contentContainerStyle={styles.cardContainer}>
               <View style={styles.cardWrapper}>
-                <Cardsource navigation={navigation} />
+                <Cardsource  />
               </View>
               <View style={styles.cardWrapper}>
-                <Cardsource navigation={navigation} />
+                <Cardsource  />
               </View>
               <View style={styles.cardWrapper}>
-                <Cardsource navigation={navigation} />
+                <Cardsource  />
               </View>
               <View style={styles.cardWrapper}>
-                <Cardsource navigation={navigation} />
+                <Cardsource  />
               </View>
               <View style={styles.cardWrapper}>
-                <Cardsource navigation={navigation} />
+                <Cardsource  />
               </View>
               <View style={styles.cardWrapper}>
-                <Cardsource navigation={navigation} />
+                <Cardsource  />
               </View>
             </View>
           </View>

@@ -2,15 +2,15 @@ import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import Card from './Card';
 
-export default function CardGroup({ name, navigation }) {
+export default function CardGroup({ name }) {
   return (
     <View>
       <Text style={styles.title}>{name}</Text>
       <ScrollView horizontal={true} contentContainerStyle={styles.container}>
-        <Card navigation={navigation} />
-        <Card navigation={navigation} />
-        <Card navigation={navigation} />
-        <Card navigation={navigation} />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
       </ScrollView>
     </View>
   );
