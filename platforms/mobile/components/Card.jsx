@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     height: 150,
     minWidth: 350,
     overflow: 'hidden',
-    borderRadius: 10
+    borderRadius: 10,
   },
 
   image: {
@@ -33,12 +33,11 @@ const styles = StyleSheet.create({
     width: '100%',
     resizeMode: 'stretch',
     borderRadius: 20,
-    marginBottom: 10,
   },
   text: {
     color: 'black',
-    fontSize: 15,
+    fontSize: 16,
     marginLeft: 15,
-    marginTop: 10
+    marginTop: 20
   },
 });
