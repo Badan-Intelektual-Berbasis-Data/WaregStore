@@ -1,5 +1,5 @@
 
-function Login() {
+export default function Login() {
     return(
     <div className="flex justify-center items-center min-h-screen  ">
         <div className="bg-red-600 p-4">
@@ -14,8 +14,7 @@ function Login() {
             </div>
         </div>
     </div>
-    )
-}
+    );
+};
   
 
-export default Login;

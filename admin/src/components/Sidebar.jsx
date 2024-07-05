@@ -11,11 +11,9 @@ const Sidebar = ({opened}) => {
       <h1 className='font-bold text-2xl text-white'>WaregStore</h1>
       <div className='flex flex-col mt-12 gap-y-4 px-2'>
         <button className='bg-[#D9D9D9] rounded-md py-2 font-medium' onClick={() => navigate("/")}>Dashboard</button>
-        <button className='bg-[#D9D9D9] rounded-md py-2 font-medium'>arders</button>
         <button className='bg-[#D9D9D9] rounded-md py-2 font-medium' onClick={() => navigate("product")}>Product</button>
-        <button className='bg-[#D9D9D9] rounded-md py-2 font-medium'>customers</button>
         <button className='bg-[#D9D9D9] rounded-md py-2 font-medium'>buyer</button>
-        <button className='bg-[#D9D9D9] rounded-md py-2 font-medium'>account</button>
+        <button className='bg-[#D9D9D9] rounded-md py-2 font-medium'>Login</button>
       </div>
     </div>
     
