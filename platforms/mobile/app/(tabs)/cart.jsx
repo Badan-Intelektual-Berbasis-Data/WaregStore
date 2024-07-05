@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Image, StyleSheet, ScrollView, View, Text, SafeAreaView, TouchableOpacity } from 'react-native';
+import { Image, StyleSheet, ScrollView, View, Text, SafeAreaView, TouchableOpacity, Pressable } from 'react-native';
+import { TextInput } from 'react-native';
 
 //Semangat Kakak-kakak.
 export default function CartScreen() {
@@ -31,7 +32,10 @@ export default function CartScreen() {
         {items.map((item) => (
           <View key={item.id} style={styles.cartContainer}>
             <View style={styles.itemInfoContainer}>
+              <View>
+                <Text style={styles.namegame}>mobile legend</Text>
               <Text style={styles.itemText}>{item.name}</Text>
+              </View>
               <Text style={styles.statusText}>{item.status}</Text>
             </View>
             <View style={styles.actionsContainer}>
@@ -48,6 +52,17 @@ export default function CartScreen() {
             </View>
           </View>
         ))}
+        <View style={styles.be}>
+          <View style={styles.harga}>
+          <Text style={styles.textpermbayaran}>Total Pembayaran</Text>
+          <Text>RP.10000</Text>
+          </View>
+          <View style={styles.harga}>
+          <Text style={styles.textpermbayaran}>Diskon</Text>
+          <Text>RP.10000</Text>
+          </View>
+          <Pressable><Text>Ke Pembayaran</Text></Pressable>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -99,12 +114,16 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     alignItems: 'center',
   },
+  namegame:{
+    fontSize:18,
+    fontWeight:'bold'
+  },
   itemText: {
-    fontSize: 18,
+    fontSize: 10,
     fontWeight: 'bold',
   },
   statusText: {
-    fontSize: 18,
+    fontSize: 15,
     color: '#000',
   },
   actionsContainer: {
@@ -125,7 +144,19 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   removeText: {
-    fontSize: 18,
+    fontSize: 15,
     color: '#ff0000',
   },
+  be:{
+    width:'100%',
+    position:'absolute',
+    bottom:0
+  },
+  harga:{
+    flexDirection:'row',
+    backgroundColor:'red',
+    justifyContent:'space-between',
+    alignItems:'center',
+    padding:10
+  }
 });
