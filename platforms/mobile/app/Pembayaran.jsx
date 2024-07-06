@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
   },
   paymentOptionText: {
     fontSize: 16,
-    color: '#fff',
+    color: 'black',
   },
   bankOptionsContainer: {
     flexDirection: 'row',
