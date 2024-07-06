@@ -14,6 +14,7 @@ const Sidebar = ({opened}) => {
         <button className='bg-[#D9D9D9] rounded-md py-2 font-medium' onClick={() => navigate("product")}>Product</button>
         <button className='bg-[#D9D9D9] rounded-md py-2 font-medium' onClick={() => navigate("Buyer")}>buyer</button>
         <button className='bg-[#D9D9D9] rounded-md py-2 font-medium' onClick={() => navigate("login")}>Login</button>
+        <button className='bg-[#D9D9D9] rounded-md py-2 font-medium' onClick={() => navigate("Profile")}>Profile</button>
       </div>
       <div className='mt-12'>
         <button className='w-48 bg-[#E84545] text-white rounded-md px-2 py-2 font-medium mt-80'>Log Out</button>

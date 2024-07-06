@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Layout from './pages/Layout'
 import Login from './pages/Login'
 import Buyer from './pages/Buyer'
+import Profile from './pages/Profile'
 
 function App() {
   
@@ -18,6 +19,8 @@ function App() {
           <Route path="product" element={<Product />} />
           <Route path="login" element={<Login />} />
           <Route path="buyer" element={<Buyer />} />
+          <Route path="Profile" element={<Profile />} />
+
 
         </Route>
       </Routes>
