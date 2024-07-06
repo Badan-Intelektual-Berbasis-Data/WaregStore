@@ -12,8 +12,8 @@ const Sidebar = ({opened}) => {
       <div className='flex flex-col mt-12 gap-y-4 px-2'>
         <button className='bg-[#D9D9D9] rounded-md py-2 font-medium' onClick={() => navigate("/")}>Dashboard</button>
         <button className='bg-[#D9D9D9] rounded-md py-2 font-medium' onClick={() => navigate("product")}>Product</button>
-        <button className='bg-[#D9D9D9] rounded-md py-2 font-medium'>buyer</button>
-        <button className='bg-[#D9D9D9] rounded-md py-2 font-medium'>Login</button>
+        <button className='bg-[#D9D9D9] rounded-md py-2 font-medium' onClick={() => navigate("Buyer")}>buyer</button>
+        <button className='bg-[#D9D9D9] rounded-md py-2 font-medium' onClick={() => navigate("login")}>Login</button>
       </div>
       <div className='mt-12'>
         <button className='w-48 bg-[#E84545] text-white rounded-md px-2 py-2 font-medium mt-80'>Log Out</button>
