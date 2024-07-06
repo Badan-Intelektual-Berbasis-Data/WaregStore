@@ -5,7 +5,7 @@ import { Link } from 'expo-router';
 export default function Cardsource({ name }) {
   return (
     <Link href="/Details" asChild>
-      <Pressable>
+      <Pressable  style={styles.contain}>
         <Image style={styles.image} source={{ uri: 'https://eht2vhtby29.exactdn.com/wp-content/uploads/2022/10/jadwal-dan-link-live-streaming-mpli-mobile-legends_169.jpeg?strip=all&lossy=0&ssl=1' }} alt="foto" />
         {/* <Image style={styles.image} source={require("@/assets/images/react-logo.png")} alt='foto'/> */}
         <Text style={styles.text}>Honor Of King</Text>
@@ -15,14 +15,16 @@ export default function Cardsource({ name }) {
 }
 
 const styles = StyleSheet.create({
+  contain:{
+  },
   image: {
-    width: 110,
-    height: 110,
-    borderRadius: 20,
+    width: 60,
+    height: 60,
+    borderRadius: 10,
   },
   text: {
     color: 'black',
-    fontSize: 16,
+    fontSize: 10,
     textAlign: 'center',
   },
 });

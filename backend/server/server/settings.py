@@ -13,7 +13,11 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 from dotenv import load_dotenv
 from os import getenv
+from pymysql import install_as_MySQLdb
 
+
+
+install_as_MySQLdb()
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -28,12 +32,12 @@ SECRET_KEY = 'django-insecure-1ldgzft6by6j*av$-58rtg*i)2x*m83@9)j_t8^s_n2#ydi*+6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '127.0.0.1:3000']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '127.0.0.1:3000', 'api.waregstore.biz.id', 'localhost:8081', 'http://127.0.0.1:8081', 'http://localhost:8081']
 
-CORS_ALLOWED_HOSTS = [
-    'localhost',
-    '127.0.0.1'
-    '127.0.0.1:3000'
+CORS_ALLOWED_ORIGINS = [
+    'http://api.waregstore.biz.id',
+    'http://127.0.0.1:8081',
+    'http://localhost:8081'
 ]
 
 # Application definition
@@ -48,7 +52,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'users',
-    'products'
+    'products',
+    'orders'
 ]
 
 MIDDLEWARE = [
@@ -67,7 +72,7 @@ ROOT_URLCONF = 'server.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -86,14 +91,18 @@ WSGI_APPLICATION = 'server.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': str(getenv('DATABASE_NAME')),
         'USER': str(getenv('DATABASE_USERNAME')),
         'PASSWORD': str(getenv('DATABASE_PASSWORD')),
         'HOST': str(getenv('DATABASE_HOST')),
         'PORT': str(getenv('DATABASE_PORT')),
+        'OPTIONS': {
+            'init_command': 'SET sql_mode="STRICT_TRANS_TABLES"',
+        }
     }
 }
 
@@ -115,6 +124,20 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+
+AUTH_USER_MODEL = "users.User"
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES' : (
+        'rest_framework_simplejwt.authentication.JWTStatelessUserAuthentication',
+    ),
+
+    'DEFAULT_PERMISSION_CLASSES' : (
+        'rest_framework.permissions.AllowAny',
+    )
+}
 
 
 # Internationalization
