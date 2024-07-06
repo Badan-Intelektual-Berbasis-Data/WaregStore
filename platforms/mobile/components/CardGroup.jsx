@@ -1,8 +1,20 @@
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
-import React from 'react';
+import React, { useEffect } from 'react';
 import Card from './Card';
+import { BASE_API_URL } from '@/constants/Server';
+
 
 export default function CardGroup({ name }) {
+
+  useEffect(() => {
+    const fetchData = async() => {
+      const data = await fetch(`${BASE_API_URL}/products`)
+      console.log(data);
+    }
+    fetchData()
+  }, [])
+
+
   return (
     <View>
       <Text style={styles.title}>{name}</Text>
