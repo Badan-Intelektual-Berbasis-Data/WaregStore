@@ -1,17 +1,10 @@
 
 export default function Login() {
     return(
-    <div className="flex justify-center items-center min-h-screen  ">
-        <div className="bg-red-600 p-4">
-            <h1>Login</h1>
-            <div>
-                <p>Email</p>
-                <input type="text" />
-            </div>
-            <div>
-                <p>Password</p>
-                <input type="text" />
-            </div>
+    <div className="flex items-center justify-center min-h-screen">
+        <div className="items-center bg-white border-8 border-gray-300 shadow-lg p-6 bg-white rounded-lg">
+            <h1 className="">Login</h1>
+            <input type="text" />
         </div>
     </div>
     );
