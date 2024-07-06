@@ -19,7 +19,11 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "keystorePath": "waregstore.keystore",
+      "keystorePassword": "solidsolidsolid",
+      "keyAlias": "waregstore",
+      "keyPassword": "solidsolidsolid"
     },
     "web": {
       "bundler": "metro",
