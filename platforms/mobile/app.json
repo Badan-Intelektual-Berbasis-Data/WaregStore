@@ -23,7 +23,8 @@
       "keystorePath": "waregstore.keystore",
       "keystorePassword": "solidsolidsolid",
       "keyAlias": "waregstore",
-      "keyPassword": "solidsolidsolid"
+      "keyPassword": "solidsolidsolid",
+      "package": "com.waregstore.mobile"
     },
     "web": {
       "bundler": "metro",
