@@ -154,7 +154,7 @@ const styles = StyleSheet.create({
   },
   harga:{
     flexDirection:'row',
-    backgroundColor:'red',
+    backgroundColor:'#fff',
     justifyContent:'space-between',
     alignItems:'center',
     padding:10
