@@ -13,6 +13,7 @@ class Category(models.Model):
 class Product(models.Model):
     name = models.CharField(max_length=255, unique=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    image_link = models.CharField(max_length=255, default="")
     date_added = models.DateTimeField(auto_now_add=True, editable=False)
 
     def __str__(self):
