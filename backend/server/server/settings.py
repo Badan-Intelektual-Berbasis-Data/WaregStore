@@ -35,7 +35,6 @@ DEBUG = True
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', '127.0.0.1:3000', 'api.waregstore.biz.id', 'localhost:8081', 'http://127.0.0.1:8081', 'http://localhost:8081']
 
 CORS_ALLOWED_ORIGINS = [
-    'http://api.waregstore.biz.id',
     'http://127.0.0.1:8081',
     'http://localhost:8081'
 ]
