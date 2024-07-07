@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Image, StyleSheet, ScrollView, View, Text, SafeAreaView } from 'react-native';
 import CardGroup from '@/components/CardGroup';
 import Cardsource from '@/components/Cardsource';
 import Kategori from '@/components/Kategori';
+import { BASE_API_URL } from '@/constants/Server';
 
 export default function HomeScreen() {
   const [isSelected, setIsSelected] = useState(false);
@@ -10,6 +11,19 @@ export default function HomeScreen() {
   const handlePress = (i) => {
     setIsSelected(i);
   };
+
+
+  const [dataKategori, setDataKategori] = useState([])
+
+
+  useEffect(() => {
+    const getData = async () => {
+      await fetch(`${BASE_API_URL}/products/category/`)      
+        .then(res => res.json())
+        .then(data => setDataKategori(data))
+    }
+    getData()
+  }, [])
 
   return (
     <SafeAreaView>
@@ -20,10 +34,9 @@ export default function HomeScreen() {
         </View>
         <View>
           <ScrollView horizontal={true} contentContainerStyle={styles.categoryContainer}>
-            <Kategori kategori_name="Game" handlePress={() => handlePress(1)} isSelected={isSelected == 1 ? true : false} />
-            <Kategori kategori_name="Aplikasi" handlePress={() => handlePress(2)} isSelected={isSelected == 2 ? true : false} />
-            <Kategori kategori_name="Pulsa" handlePress={() => handlePress(3)} isSelected={isSelected == 3 ? true : false} />
-            <Kategori kategori_name="Token" handlePress={() => handlePress(4)} isSelected={isSelected == 4 ? true : false} />
+            { dataKategori && dataKategori.map((category, index) => (
+              <Kategori key={index} kategori_name={category.name} handlePress={() => handlePress(index)} isSelected={isSelected == index ? true : false} />
+          )) }
           </ScrollView>
           {/* content */}
           <View style={styles.cardGroupContainer}>

@@ -6,6 +6,7 @@ const Product = ({opened}) => {
     <div>
       <div>
         <h1>hello</h1>
+        <h2>hallo</h2>
       </div>
     </div>
         

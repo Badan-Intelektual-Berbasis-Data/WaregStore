@@ -13,8 +13,11 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 from dotenv import load_dotenv
 from os import getenv
+from pymysql import install_as_MySQLdb
 
 
+
+install_as_MySQLdb()
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -29,12 +32,11 @@ SECRET_KEY = 'django-insecure-1ldgzft6by6j*av$-58rtg*i)2x*m83@9)j_t8^s_n2#ydi*+6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '127.0.0.1:3000']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '127.0.0.1:3000', 'api.waregstore.biz.id', 'localhost:8081', 'http://127.0.0.1:8081', 'http://localhost:8081']
 
-CORS_ALLOWED_HOSTS = [
-    'localhost',
-    '127.0.0.1'
-    '127.0.0.1:3000'
+CORS_ALLOWED_ORIGINS = [
+    'http://127.0.0.1:8081',
+    'http://localhost:8081'
 ]
 
 # Application definition
@@ -88,6 +90,7 @@ WSGI_APPLICATION = 'server.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -96,6 +99,9 @@ DATABASES = {
         'PASSWORD': str(getenv('DATABASE_PASSWORD')),
         'HOST': str(getenv('DATABASE_HOST')),
         'PORT': str(getenv('DATABASE_PORT')),
+        'OPTIONS': {
+            'init_command': 'SET sql_mode="STRICT_TRANS_TABLES"',
+        }
     }
 }
 

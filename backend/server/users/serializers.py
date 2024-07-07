@@ -1,12 +1,6 @@
-from django.contrib.auth import authenticate
 from django.utils.translation import gettext_lazy as _
-from rest_framework.serializers import (
-    ModelSerializer,
-    ValidationError
-)
-from .models import (
-    User
-)
+from rest_framework.serializers import ModelSerializer
+from .models import User
 
 class UserSerializer(ModelSerializer):
     class Meta:
@@ -21,32 +15,6 @@ class UserSerializer(ModelSerializer):
         obj.save()
 
         return obj
-
-
-
-
-
-
-# class LoginSerializer(ModelSerializer):
-#     class Meta:
-#         model = User
-#         fields = ["name", "password"]
-
-#     def validate(self, data):
-#         username = data.get("name")
-#         password = data.get("password")
-
-#         if username and password:
-#             user = authenticate(request=self.context.get("request"), name=username, password=password)
-
-#             if not user:
-#                 raise ValidationError(_("Username atau Password Salah"), code="authorization")
-
-#             data["user"] = user
-#             return data
-
-#         raise ValidationError(_("Username atau Password Salah"), code="authorization")
-
 
 
 
