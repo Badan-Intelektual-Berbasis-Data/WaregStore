@@ -47,7 +47,15 @@ class ProductView(GenericAPIView):
 
         return Response({"messege" : "Produk baru ditambahkan"})
 
-        
+
+    def patch(self, request):
+        serializer = ProductSerializer(data=request.data, partial=True)
+
+        if not serializer.is_valid(raise_exception=DEBUG):
+            return Response({"messege" : "Data tidak valid"}, status=HTTP_400_BAD_REQUEST)
+
+        serializer.save()
+        return Response(serializer.data)
 
 
 class CategoryView(GenericAPIView):
