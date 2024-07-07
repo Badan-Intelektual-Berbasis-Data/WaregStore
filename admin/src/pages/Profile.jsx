@@ -5,5 +5,5 @@ function Profile() {
     <h1>hallo</h1>
   );
 
-};
+}
 export default Profile

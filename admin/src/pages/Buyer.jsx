@@ -13,7 +13,7 @@ export default function Buyer() {
       ];
   
   return(
-      <div class="scroll-m-64 w-[88vw]">
+      <div className="scroll-m-64 w-[88vw]">
     
       <div>
         <h1 className="text-2xl font-bold mb-5 text-center bg-indigo-600 text-white py-2 rounded" >Buyer List</h1>
@@ -47,4 +47,4 @@ export default function Buyer() {
     </div>
  
   );
-};
+}
