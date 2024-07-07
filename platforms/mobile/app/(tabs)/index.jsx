@@ -34,10 +34,6 @@ export default function HomeScreen() {
         </View>
         <View>
           <ScrollView horizontal={true} contentContainerStyle={styles.categoryContainer}>
-            {/* <Kategori kategori_name="Game" handlePress={() => handlePress(1)} isSelected={isSelected == 1 ? true : false} />
-            <Kategori kategori_name="Aplikasi" handlePress={() => handlePress(2)} isSelected={isSelected == 2 ? true : false} />
-            <Kategori kategori_name="Pulsa" handlePress={() => handlePress(3)} isSelected={isSelected == 3 ? true : false} />
-            <Kategori kategori_name="Token" handlePress={() => handlePress(4)} isSelected={isSelected == 4 ? true : false} /> */}
             { dataKategori && dataKategori.map((category, index) => (
               <Kategori key={index} kategori_name={category.name} handlePress={() => handlePress(index)} isSelected={isSelected == index ? true : false} />
           )) }
