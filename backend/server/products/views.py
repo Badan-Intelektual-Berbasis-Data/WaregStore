@@ -5,9 +5,8 @@ from rest_framework.response import Response
 from rest_framework.status import (
     HTTP_404_NOT_FOUND,
     HTTP_400_BAD_REQUEST,
-    HTTP_401_UNAUTHORIZED,
-    HTTP_405_METHOD_NOT_ALLOWED
 )
+from rest_framework.mixins import UpdateModelMixin
 from rest_framework.permissions import (
     IsAuthenticatedOrReadOnly,
     AllowAny    
@@ -31,6 +30,7 @@ class ProductView(GenericAPIView):
     serializer_class = ProductSerializer
     queryset = Product.objects.all()
 
+
     def get(self, _):
         serializer = ProductSerializer(Product.objects.all(), many=True)
         return Response(serializer.data)
@@ -46,16 +46,7 @@ class ProductView(GenericAPIView):
         serializer.save()
 
         return Response({"messege" : "Produk baru ditambahkan"})
-
-
-    def patch(self, request):
-        serializer = ProductSerializer(data=request.data, partial=True)
-
-        if not serializer.is_valid(raise_exception=DEBUG):
-            return Response({"messege" : "Data tidak valid"}, status=HTTP_400_BAD_REQUEST)
-
-        serializer.save()
-        return Response(serializer.data)
+    
 
 
 class CategoryView(GenericAPIView):
