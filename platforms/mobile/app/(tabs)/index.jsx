@@ -26,7 +26,6 @@ export default function HomeScreen() {
   }, [])
 
   return (
-    <SafeAreaView>
       <ScrollView>
         <View style={styles.header}>
           <Image source={require('@/assets/images/logowaregstore.png')} style={styles.logo} />
@@ -69,7 +68,6 @@ export default function HomeScreen() {
           </View>
         </View>
       </ScrollView>
-    </SafeAreaView>
   );
 }
 
